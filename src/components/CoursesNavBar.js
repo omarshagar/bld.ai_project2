@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CoursesViewer from "./CoursesViewer";
+import { get_home_page_data } from "../controllers/dataController";
 const categoties = [
 	"Python",
 	"Exel",
@@ -39,14 +40,27 @@ function addNavBarList(currentCategory, setCurrentCategory) {
 	}
 	return items;
 }
-function read_data() {
-	let data = require("../json-server/home_page.json");
-	return data;
-}
-let data = read_data();
+const read_data = async (setdataFetching, sethomePageD, homePageD) => {
+	await get_home_page_data()
+		.then((res) => {
+			setdataFetching("done");
+			return res;
+		})
+		.then((res) => {
+			sethomePageD(res);
+			return res;
+		});
+
+	// setdataFetching("done");
+};
 function CoursesNavBar() {
+	const [homePageD, sethomePageD] = useState("d");
+	const [dataFetching, setdataFetching] = useState("loading");
 	const [currentCategory, setCurrentCategory] = useState("Python");
 
+	useEffect(() => {
+		read_data(setdataFetching, sethomePageD, homePageD);
+	}, []);
 	return (
 		<>
 			<nav className="navbar navbar-expand-md bg-bg-white">
@@ -69,11 +83,16 @@ function CoursesNavBar() {
 					</div>
 				</div>
 			</nav>
-
-			<CoursesViewer
-				data={data[currentCategory]}
-				title={currentCategory}
-			></CoursesViewer>
+			{dataFetching == "done" ? (
+				<CoursesViewer
+					data={homePageD[currentCategory]}
+					title={currentCategory}
+				></CoursesViewer>
+			) : (
+				<div class="spinner-border text-dark" role="status">
+					<span class="visually-hidden">Loading...</span>
+				</div>
+			)}
 		</>
 	);
 }

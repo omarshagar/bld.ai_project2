@@ -1,6 +1,5 @@
 import "./App.css";
 import React from "react";
-
 import NavBar from "./components/NavBar";
 import MainPageHeader from "./components/MainPageHeader";
 import Courses from "./components/Courses";
