@@ -14,7 +14,7 @@ function NavBar() {
 				<Link to="/">
 					<img
 						className="general"
-						src="images/Udemy_logo.svg.png"
+						src="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Logo-2021-present.png"
 						alt="Udemy_logo"
 					/>
 				</Link>
@@ -70,8 +70,10 @@ function NavBar() {
 				<a href="">
 					<img
 						className="general"
-						src="images/shopping-cart.png"
+						src="https://media.istockphoto.com/vectors/shopping-cart-black-icon-on-white-background-vector-illustration-for-vector-id1079804618?k=20&m=1079804618&s=612x612&w=0&h=bwUh2mLL5T-fzrdPN6fwlB3BBBDoa1n2GDvQW-7FskM="
 						alt="shopping-cart"
+						width="40px"
+						hight="40px"
 					/>
 				</a>
 			</div>

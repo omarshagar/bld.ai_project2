@@ -13,6 +13,7 @@ const read_all_data = async () => {
 			);
 		} catch (e) {
 			console.log(e);
+			return;
 		}
 	}
 	return data;

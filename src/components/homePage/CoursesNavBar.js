@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import CoursesViewer from "./CoursesViewer";
-import { get_home_page_data } from "../controllers/dataController";
+import { get_home_page_data } from "../../controllers/dataController";
+import { homePageDataContext, homeDataFetchingStateContext } from "../../App";
+
 const categoties = [
 	"Python",
 	"Exel",
@@ -40,27 +42,30 @@ function addNavBarList(currentCategory, setCurrentCategory) {
 	}
 	return items;
 }
-const read_data = async (setdataFetching, sethomePageD, homePageD) => {
-	await get_home_page_data()
-		.then((res) => {
-			setdataFetching("done");
-			return res;
-		})
-		.then((res) => {
-			sethomePageD(res);
-			return res;
-		});
+// const read_data = async (setdataFetching, sethomePageD, homePageD) => {
+// 	await get_home_page_data()
+// 		.then((res) => {
+// 			setdataFetching("done");
+// 			return res;
+// 		})
+// 		.then((res) => {
+// 			sethomePageD(res);
+// 			return res;
+// 		});
 
-	// setdataFetching("done");
-};
+// 	// setdataFetching("done");
+// };
 function CoursesNavBar() {
-	const [homePageD, sethomePageD] = useState("d");
-	const [dataFetching, setdataFetching] = useState("loading");
+	const isLoading = useContext(homeDataFetchingStateContext);
+	const homePageData = useContext(homePageDataContext);
+	// const [homePageD, sethomePageD] = useState("d");
+	// const [dataFetching, setdataFetching] = useState("loading");
 	const [currentCategory, setCurrentCategory] = useState("Python");
 
-	useEffect(() => {
-		read_data(setdataFetching, sethomePageD, homePageD);
-	}, []);
+	// useEffect(() => {
+	// 	read_data(setdataFetching, sethomePageD, homePageD);
+	// }, []);
+
 	return (
 		<>
 			<nav className="navbar navbar-expand-md bg-bg-white">
@@ -83,9 +88,9 @@ function CoursesNavBar() {
 					</div>
 				</div>
 			</nav>
-			{dataFetching == "done" ? (
+			{isLoading === "done" ? (
 				<CoursesViewer
-					data={homePageD[currentCategory]}
+					data={homePageData[currentCategory]}
 					title={currentCategory}
 				></CoursesViewer>
 			) : (

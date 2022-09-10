@@ -16,7 +16,9 @@
 .categories-carousal-inner {
 	display: inline-block;
 }
-
+.footer-font-imp {
+	color: #cec0fc;
+}
 .course-card {
 	width: 300px;
 
@@ -35,6 +37,7 @@ body {
 	align-items: center;
 }
 #nav-bar {
+	background-color: #ffffff;
 	display: flex;
 	width: 100%;
 	justify-content: center;
@@ -42,6 +45,9 @@ body {
 	height: 72px;
 	min-width: fit-content;
 	box-shadow: 10px 2px 10px 4px rgb(197, 197, 197);
+	z-index: 2;
+	position: relative;
+	top: 0%;
 }
 .general {
 	max-width: 100%;
@@ -113,12 +119,12 @@ body {
 	color: rgb(158, 9, 238);
 }
 .nav-bar-btn2 {
-	width: 20px;
 	margin-top: 25px;
 	margin-left: 10px;
+	margin-bottom: 25px;
 }
 .nav-bar-btn3 {
-	margin-left: 12px;
+	margin-right: 12px;
 	border: 1px black solid;
 	min-width: 75px;
 	height: 40px;
@@ -126,6 +132,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-top: 15px;
+	margin-bottom: 15px;
 }
 #signup-btn {
 	background-color: black;
@@ -154,6 +161,8 @@ body {
 }
 .hidden-link:hover {
 	color: rgb(158, 9, 238);
+}
+#footer {
 }
 #header {
 	display: flex;
@@ -252,6 +261,25 @@ body {
 	margin-left: 1%;
 	margin-top: 2%;
 	margin-bottom: 1%;
+}
+.tiny-font {
+	font-size: 15px;
+}
+.mutable-link:link {
+	text-decoration: none;
+}
+.mutable-link:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.ul-with-no-points {
+	list-style: none;
+}
+.course-main-page-slider {
+	z-index: 1;
+	position: fixed;
+
+	top: 4%;
 }
 @media screen and (max-width: 825px) {
 	#udemy-logo {

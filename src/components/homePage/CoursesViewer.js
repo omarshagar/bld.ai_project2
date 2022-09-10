@@ -1,9 +1,9 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useContext, useLayoutEffect, useState } from "react";
 import CarouselItem from "./CarouselItem";
 import CourseCard from "./CourseCard";
 import { renderToString } from "react-dom/server";
 import { useSearchParams } from "react-router-dom";
-
+import { homePageDataContext, homeDataFetchingStateContext } from "../../App";
 function useWindowSize() {
 	const [size, setSize] = useState([1000, 1000]);
 	useLayoutEffect(() => {

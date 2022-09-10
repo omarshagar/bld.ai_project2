@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 function draw_stars(rate) {
 	let stars = [];
 	rate = Math.floor(rate);
@@ -15,11 +15,13 @@ function CourseCard(props) {
 
 	return (
 		<div className="card col mx-1 course-card">
-			<img
-				src={props.data.image ? props.data.image : default_image}
-				alt="course_img"
-				className="card-img-top"
-			></img>
+			<Link to={`Course/:${props.data.id}`}>
+				<img
+					src={props.data.image ? props.data.image : default_image}
+					alt="course_img"
+					className="card-img-top"
+				></img>
+			</Link>
 			<div className="card-body d-flex flex-column  justify-content-center ">
 				<h5 className="card-title fs-6 fw-semibold text-wrap ">
 					{props.data.title}
