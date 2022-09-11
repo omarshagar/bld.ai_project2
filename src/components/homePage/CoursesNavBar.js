@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import CoursesViewer from "./CoursesViewer";
-import { get_home_page_data } from "../../controllers/dataController";
 import { homePageDataContext, homeDataFetchingStateContext } from "../../App";
+import Spinner from "../Spinner";
 
 const categoties = [
 	"Python",
@@ -94,9 +94,7 @@ function CoursesNavBar() {
 					title={currentCategory}
 				></CoursesViewer>
 			) : (
-				<div class="spinner-border text-dark" role="status">
-					<span class="visually-hidden">Loading...</span>
-				</div>
+				<Spinner color="dark"></Spinner>
 			)}
 		</>
 	);

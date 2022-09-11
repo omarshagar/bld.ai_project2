@@ -44,10 +44,16 @@ body {
 	align-items: center;
 	height: 72px;
 	min-width: fit-content;
-	box-shadow: 10px 2px 10px 4px rgb(197, 197, 197);
+	box-shadow: 1px 1px 10px 1px rgb(197, 197, 197);
 	z-index: 2;
 	position: relative;
 	top: 0%;
+}
+.icon-50 {
+	max-width: 40px;
+	max-height: 20px;
+	min-width: 40px;
+	min-height: 20px;
 }
 .general {
 	max-width: 100%;
@@ -162,8 +168,7 @@ body {
 .hidden-link:hover {
 	color: rgb(158, 9, 238);
 }
-#footer {
-}
+
 #header {
 	display: flex;
 	margin-top: 1%;
@@ -263,10 +268,13 @@ body {
 	margin-bottom: 1%;
 }
 .tiny-font {
-	font-size: 15px;
+	font-size: 14px;
 }
 .mutable-link:link {
 	text-decoration: none;
+}
+.container-fluid {
+	padding: 0 !important;
 }
 .mutable-link:hover {
 	text-decoration: underline;
@@ -278,8 +286,50 @@ body {
 .course-main-page-slider {
 	z-index: 1;
 	position: fixed;
+	top: 0%;
+}
 
-	top: 4%;
+.course-main-page-right-card {
+	position: absolute;
+	top: 10%;
+	right: 3%;
+	width: 340px;
+	height: 85em;
+
+	/* background-color: white; */
+}
+.course-main-page-right-card-upper-btn {
+	background-color: #a435f0;
+	color: white;
+	font-size: medium;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	width: 100%;
+	border-radius: 0%;
+	font-weight: bold;
+	height: 3em;
+}
+.course-main-page-right-card-lower-btn {
+	background-color: #ffffff;
+	color: rgb(0, 0, 0);
+	font-size: medium;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	width: 100%;
+	border-radius: 0%;
+	font-weight: bold;
+	height: 3em;
+	border: solid black 1px;
+}
+.course-main-page-right-card-lower-element {
+	position: sticky;
+	top: 5%;
+	z-index: 4;
+}
+@media screen and (max-width: 992px) {
+	.course-main-page-slider {
+		position: fixed;
+		bottom: 0%;
+		top: auto;
+	}
 }
 @media screen and (max-width: 825px) {
 	#udemy-logo {

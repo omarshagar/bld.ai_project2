@@ -35,9 +35,9 @@ function FooterLower() {
 				<div className="col-md-4 ms-5">
 					<button
 						type="button"
-						className=" btn btn-dark border-white col-md-4 "
+						className=" btn btn-dark border-white col-md-4 rounded-0"
 					>
-						<div className="mutable-link" href="">
+						<div>
 							<b>English</b>
 						</div>
 					</button>
