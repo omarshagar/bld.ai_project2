@@ -7,7 +7,6 @@ function draw_elements(titles) {
 	return ret;
 }
 function Item(props) {
-	console.log(props.data);
 	return (
 		<div className=" col-auto  row">
 			<img
@@ -22,7 +21,7 @@ function Item(props) {
 function WillLearn(props) {
 	return (
 		<div className="container-flex mt-4 p-2 ">
-			<div className="container-flex col-4 w-50 offset-2 border border-dark border-opacity-25 p-2">
+			<div className="container-flex col-4 w-50 offset-xl-2 border border-dark border-opacity-25 p-2">
 				<div className="fs-4 fw-bold p-2">What you'll learn</div>
 
 				<div className=" container-flex row">{draw_elements(props.data)}</div>

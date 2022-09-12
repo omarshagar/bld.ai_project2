@@ -12,7 +12,7 @@ function Item(props) {
 }
 function RightCard(props) {
 	return (
-		<div className="course-main-page-right-card d-lg-block d-none">
+		<div className="course-main-page-right-card d-xl-block d-none">
 			<div className=" justify-content-center border border-1 border-light ">
 				<img src={props.data.image} height={"190"}></img>
 			</div>

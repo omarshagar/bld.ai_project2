@@ -308,6 +308,13 @@ body {
 	font-weight: bold;
 	height: 3em;
 }
+
+.course-content-collapse {
+	color: #a435f0;
+}
+.course-content-collapse:hover {
+	cursor: pointer;
+}
 .course-main-page-right-card-lower-btn {
 	background-color: #ffffff;
 	color: rgb(0, 0, 0);
@@ -324,11 +331,37 @@ body {
 	top: 5%;
 	z-index: 4;
 }
-@media screen and (max-width: 992px) {
+.course-main-page-section-btn {
+	background-color: #f7f9fa;
+	border: rgb(181, 181, 181) 0.5px solid;
+}
+.course-main-page-section-btn:hover {
+	cursor: pointer;
+}
+.course-main-page-content-section {
+	border: rgb(181, 181, 181) 0.5px solid;
+}
+.course-main-page-main-container {
+	width: 50%;
+}
+.small-course-header-img {
+	width: 85%;
+}
+.course-main-page-desc-false {
+	max-height: 250px;
+	overflow: hidden;
+}
+.course-main-page-desc-true {
+	max-height: none;
+}
+@media screen and (max-width: 1200px) {
 	.course-main-page-slider {
 		position: fixed;
 		bottom: 0%;
 		top: auto;
+	}
+	.course-main-page-main-container {
+		width: 95%;
 	}
 }
 @media screen and (max-width: 825px) {

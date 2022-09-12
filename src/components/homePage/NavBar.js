@@ -7,7 +7,12 @@ function NavBar() {
 	return (
 		<div id="nav-bar">
 			<div id="shorted-bar" className="general">
-				<img src="images/list.png" className="general" alt="menu" />
+				<img
+					src="https://cdn-icons-png.flaticon.com/512/2099/2099192.png"
+					className="general"
+					alt="menu"
+					width={"40"}
+				/>
 			</div>
 
 			<div id="udemy-logo" className="general">
