@@ -3,7 +3,7 @@ import DescriptionViewer from "./DescriptionViewer";
 
 function Item(props) {
 	return (
-		<div className="row p-2">
+		<div className="container row p-2">
 			<div className="col-2">
 				<img width={"15"} src={props.src}></img>
 			</div>
@@ -12,22 +12,18 @@ function Item(props) {
 	);
 }
 function Instructor(props) {
-	/*"rating": "4.4",
-						"reviewsNumber": "73,735",
-						"studentsNumber": "890,586",
-						"coursesNumber": "16", */
 	return (
 		<>
-			<div>
-				<a className="fs-3 fw-bold"> {props.data.name}</a>
+			<div className="pt-4">
+				<a className="fs-3 fw-bold "> {props.data.name}</a>
 			</div>
 			<div className="fs-4 text-secondary">{props.data.intro}</div>
 
-			<div className="container row">
-				<div className="col-4">
+			<div className="container-flex row">
+				<div className="col-6">
 					<img src={props.data.image} class="rounded-circle"></img>
 				</div>
-				<div className="col-8">
+				<div className="col-6">
 					<Item
 						src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png"
 						title={`${props.data.rate} Instructor Rating`}
@@ -50,11 +46,18 @@ function Instructor(props) {
 		</>
 	);
 }
+function draw(all) {
+	let ret = [];
+	for (let i = 0; i < all.length; i++) {
+		ret.push(<Instructor data={all[i]} key={i}></Instructor>);
+	}
+	return ret;
+}
 function Instructors(props) {
 	return (
 		<div className="container-xl-flex container-fluid mt-4   course-main-page-main-container offset-xl-2">
 			<div className="fw-bold fs-2 py-4">Instructors</div>
-			<Instructor data={props.data[0]}></Instructor>
+			{draw(props.data)}
 		</div>
 	);
 }

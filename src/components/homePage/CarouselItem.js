@@ -8,8 +8,10 @@ function fill_courses(courses) {
 }
 function CarouselItem(props) {
 	return (
-		<div className={`carousel-item ${props.is_active}`}>
-			<div className="row">{fill_courses(props.sub_courses)}</div>
+		<div className={`overflow-visible carousel-item ${props.is_active}`}>
+			<div className="row overflow-visible">
+				{fill_courses(props.sub_courses)}
+			</div>
 		</div>
 	);
 }

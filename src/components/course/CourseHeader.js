@@ -40,7 +40,7 @@ function CourseHeader(props) {
 					Created by{" "}
 					<span className="footer-font-imp">
 						{" "}
-						{props.data.instructors.name}
+						{props.data.instructors[0].name}
 					</span>{" "}
 				</div>
 				<div></div>

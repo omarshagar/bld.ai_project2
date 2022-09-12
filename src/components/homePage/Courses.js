@@ -3,8 +3,8 @@ import CoursesNavBar from "./CoursesNavBar";
 
 function Courses() {
 	return (
-		<div id="courses">
-			<div id="courses-txt">
+		<div id="courses" className="overflow-visible">
+			<div id="courses-txt" className="overflow-visible">
 				<div className="txt-udemy">
 					<h1>A broad selection of courses</h1>
 				</div>
@@ -14,7 +14,7 @@ function Courses() {
 				</div>
 			</div>
 
-			<div className="courses-viewer">
+			<div className="courses-viewer overflow-visible">
 				<CoursesNavBar></CoursesNavBar>
 			</div>
 		</div>

@@ -67,7 +67,7 @@ function CoursesNavBar() {
 	// }, []);
 
 	return (
-		<>
+		<div className="overflow-visible">
 			<nav className="navbar navbar-expand-md bg-bg-white">
 				<div className="container-fluid">
 					<button
@@ -88,6 +88,7 @@ function CoursesNavBar() {
 					</div>
 				</div>
 			</nav>
+
 			{isLoading === "done" ? (
 				<CoursesViewer
 					data={homePageData[currentCategory]}
@@ -96,7 +97,7 @@ function CoursesNavBar() {
 			) : (
 				<Spinner color="dark"></Spinner>
 			)}
-		</>
+		</div>
 	);
 }
 

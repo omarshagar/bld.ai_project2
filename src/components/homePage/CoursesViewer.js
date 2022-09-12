@@ -32,11 +32,13 @@ function filter(courses, searchWrd) {
 function draw_cursel_elements(Allcourses, width, searchWrd) {
 	let courses = filter(Allcourses, searchWrd);
 	let courses_cnt = courses.length;
-	let card_width = 280;
+	let card_width = 360;
 	let tot_cards_per_item = Math.floor(width / card_width);
+	if (tot_cards_per_item == 0) tot_cards_per_item = 1;
 	let items_cnt = Math.ceil(courses_cnt / tot_cards_per_item);
 	let las = 0;
 	let cr_items = [];
+
 	for (let i = 0; i < items_cnt; i++) {
 		if (i == 0)
 			cr_items.push(
@@ -69,7 +71,7 @@ function Courses(props) {
 	const [searchWord, setSearchWord] = useSearchParams();
 
 	return (
-		<div className="container-fluid w-auto mt-3 mx-2 mb-2 border">
+		<div className="container-fluid w-auto mt-3 mx-2 mb-2 border overflow-visible">
 			<div>
 				<section className="mt-2">
 					<h1 className="fs-4">{props.data.header}</h1>
@@ -87,13 +89,16 @@ function Courses(props) {
 				</div>
 			</div>
 
-			<div className="courses-viewer mt-3" id="courses-viewer">
+			<div
+				className="container-fluid courses-viewer overflow-visible mt-3"
+				id="courses-viewer"
+			>
 				<div
 					id="carouselExampleControls"
-					className="carousel slide"
+					className="carousel slide container-fluid overflow-visible"
 					data-bs-ride="carousel"
 				>
-					<div className="carousel-inner">
+					<div className="carousel-inner overflow-visible">
 						{draw_cursel_elements(
 							props.data.courses,
 							width,
@@ -101,7 +106,7 @@ function Courses(props) {
 						)}
 					</div>
 					<button
-						className="carousel-control-prev"
+						className="carousel-control-prev cursol-btn "
 						type="button"
 						data-bs-target="#carouselExampleControls"
 						data-bs-slide="prev"
@@ -113,7 +118,7 @@ function Courses(props) {
 						<span className="visually-hidden">Previous</span>
 					</button>
 					<button
-						className="carousel-control-next"
+						className="carousel-control-next cursol-btn "
 						type="button"
 						data-bs-target="#carouselExampleControls"
 						data-bs-slide="next"
